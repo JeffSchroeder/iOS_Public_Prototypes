@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CamerButtonProto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera Button:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2Y-81-Xui">
+                                <rect key="frame" x="16" y="60" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Button:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBm-aF-0ii">
+                                <rect key="frame" x="16" y="201" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmO-zB-5dA" customClass="CameraButton" customModule="CamerButtonProto" customModuleProvider="target">
+                                <rect key="frame" x="167" y="101" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RmO-zB-5dA" secondAttribute="height" multiplier="1:1" id="MII-W5-mCb"/>
+                                    <constraint firstAttribute="width" constant="80" id="YJz-Hm-ag5"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="camerButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iaW-cG-1ax"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9a-85-sia" customClass="CameraButton" customModule="CamerButtonProto" customModuleProvider="target">
+                                <rect key="frame" x="167" y="242" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="ArH-lT-Af0"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isVideoButton" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="camerButtonTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qze-KZ-Pu1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RmO-zB-5dA" firstAttribute="top" secondItem="a2Y-81-Xui" secondAttribute="bottom" constant="20" id="0eY-vK-l4s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="a2Y-81-Xui" secondAttribute="trailing" symbolic="YES" id="2Fm-7M-i6f"/>
+                            <constraint firstItem="RmO-zB-5dA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Dog-90-CN8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="r9a-85-sia" secondAttribute="trailing" constant="8" id="J7V-yT-Gck"/>
+                            <constraint firstItem="a2Y-81-Xui" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KEP-SH-dE0"/>
+                            <constraint firstItem="r9a-85-sia" firstAttribute="width" secondItem="r9a-85-sia" secondAttribute="height" multiplier="1:1" id="ReI-Cs-krn"/>
+                            <constraint firstItem="a2Y-81-Xui" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="TW5-Ir-hop"/>
+                            <constraint firstItem="SBm-aF-0ii" firstAttribute="top" secondItem="RmO-zB-5dA" secondAttribute="bottom" constant="20" id="Tqw-vE-ISw"/>
+                            <constraint firstItem="r9a-85-sia" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="VUs-8P-pfQ"/>
+                            <constraint firstItem="RmO-zB-5dA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Xuf-aI-IGa"/>
+                            <constraint firstItem="r9a-85-sia" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gVE-aS-nWW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RmO-zB-5dA" secondAttribute="trailing" constant="8" id="jx5-sd-WAb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SBm-aF-0ii" secondAttribute="trailing" symbolic="YES" id="qpD-G4-IAt"/>
+                            <constraint firstItem="r9a-85-sia" firstAttribute="top" secondItem="SBm-aF-0ii" secondAttribute="bottom" constant="20" id="vBC-DW-rb6"/>
+                            <constraint firstItem="SBm-aF-0ii" firstAttribute="leading" secondItem="a2Y-81-Xui" secondAttribute="leading" id="vhz-Mr-xTU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="RmO-zB-5dA" id="8i0-w1-PSf"/>
+                        <outlet property="videoButton" destination="r9a-85-sia" id="Wtf-sg-Cmn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
