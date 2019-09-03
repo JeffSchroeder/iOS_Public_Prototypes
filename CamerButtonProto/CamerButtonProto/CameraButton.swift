@@ -1,7 +1,7 @@
 //
 //  CameraButton.swift
 //
-//  Created by Jeff Schroeder on 8/30/19 for a purely awesome reasons.
+//  Created by Jeff Schroeder on 8/30/19 because it was needed.
 //  Copyright © 2019 JeffSchroeder.
 //
 //    Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -65,6 +65,7 @@ class CameraButton: UIButton {
     private(set) var recording = false
     /// Type of camera button this is
     private(set) var cameraButtonType = CameraButtonType.camera
+    /// Gives a little vibration when the button is touched
     private var feedbackGenerator : UISelectionFeedbackGenerator? = nil
     
     // MARK: - IBInspectable members
@@ -174,7 +175,7 @@ extension CameraButton {
         let calcXY = (Double(controlWidth) - Double(squareWidth))/2
         let castCalcXYFloat = NSNumber.init(value: calcXY).floatValue
         let xY = CGFloat(castCalcXYFloat)
-        animationView.frame = CGRect(x:xY , y:xY , width: squareWidth, height: squareWidth)  
+        animationView.frame = CGRect(x:xY , y:xY , width: squareWidth, height: squareWidth)
         animationView.layer.cornerRadius = squareWidth/8
     }
     
@@ -182,6 +183,7 @@ extension CameraButton {
     /// Use the 'recording' and 'cameraButtonType' to determine what action should be taken by the client
     @objc internal func controlTouched() {
         if !currentlyAnimating {
+            recording = !recording
             animateControl()
             sendActions(for: .touchUpInside)
         }
@@ -191,8 +193,8 @@ extension CameraButton {
     private func animateControl() {
         feedbackGenerator = UISelectionFeedbackGenerator()
         feedbackGenerator?.prepare()
+        currentlyAnimating = true
         UIView.animate(withDuration: 0.25, animations: { [weak self] in
-            self?.currentlyAnimating = true
             if let cbt = self?.cameraButtonType {
                 switch cbt {
                 case .camera:
@@ -200,11 +202,10 @@ extension CameraButton {
                 case .video:
                     if let recording = self?.recording {
                         if recording {
-                            self?.setupAnimationViewCircle()
-                        } else {
                             self?.setupAnimationViewSquare()
+                        } else {
+                            self?.setupAnimationViewCircle()
                         }
-                        self?.recording = !recording
                     }
                 }
             }
