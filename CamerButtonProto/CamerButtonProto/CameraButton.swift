@@ -182,7 +182,6 @@ extension CameraButton {
     /// touchUpInside event Handler
     /// Use the 'recording' and 'cameraButtonType' to determine what action should be taken by the client
     @objc internal func touchUpInside() {
-        print("cameraButton - controlTouched")
         if !currentlyAnimating {
             recording = !recording
             animateControl()
