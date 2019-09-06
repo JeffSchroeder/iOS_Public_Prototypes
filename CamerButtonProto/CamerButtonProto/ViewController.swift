@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var cameraButton: CameraButton!
     @IBOutlet weak var videoButton: CameraButton!
-        /// Style in the UI with the IBInspectable bits or use code like the following.
+    /// Style in the UI with the IBInspectable bits or use code like the following.
     //    {
     //    didSet {
     //        videoButton.isVideoButton = true
@@ -40,16 +40,16 @@ class ViewController: UIViewController {
     //    }
     //}
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    //override func viewDidLoad() {
+    //    super.viewDidLoad()
+    //}
     
     @IBAction func camerButtonTouchUpInside(_ sender: Any) {
+        print("TouchUpInside")
         if let cameraButton = sender as? CameraButton {
             switch cameraButton.cameraButtonType {
             case .camera:
-                showAlert(title: "Camera", message: "Do something photo like.")
+                showAlert(title: "Camera", message: "Do something take a photo like.")
             case .video:
                 // NOTE: TouchUpInside is called by the component after the recording Bool is toggled.
                 if cameraButton.recording {

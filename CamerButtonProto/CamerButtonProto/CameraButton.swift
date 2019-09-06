@@ -48,7 +48,7 @@ public enum CameraButtonType: String {
 }
 
 @IBDesignable
-/// The camera button is a button extension to mimic the actions of the VIDEO and CAMERA shutter control on the Camera app for iOS.
+/// The camera button is a button extension to mimic the actions of the VIDEO and CAMERA shutter control on the Camera app for iOS.  It is currently hooked up to the TouchUpInside event.
 class CameraButton: UIButton {
     
     // MARK: - Member
@@ -60,8 +60,8 @@ class CameraButton: UIButton {
     private var squareWidth = 0 as CGFloat
     private var currentlyAnimating = false
     /// Is the button in recording mode
-    /// True:   When button is in the 'recording(center circle)' style in video mode
-    /// False:  When button is in camera mode or in the 'not recording(center square)' style in video mode
+    /// True:   When button is in the 'recording(center square)' style in video mode
+    /// False:  When button is in camera mode or in the 'not recording(center circle)' style in video mode
     private(set) var recording = false
     /// Type of camera button this is
     private(set) var cameraButtonType = CameraButtonType.camera
@@ -154,12 +154,12 @@ extension CameraButton {
     private func setup() {
         self.setTitle("", for:UIControl.State.normal)
         setupAnimationViewCircle()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.controlTouched))
-        animationView.addGestureRecognizer(tapGesture)
-        addSubview(animationView)
+        animationView.isUserInteractionEnabled = false  // Let taps go to the control and not the view
+        addTarget(self, action: #selector(self.touchUpInside), for: .touchUpInside)
+        insertSubview(animationView, belowSubview: self.imageView!)
     }
     
-    /// Sets up the inner circle on the control
+    /// Sets up the animation view to a circle on the control. Camera or not recording state.
     private func setupAnimationViewCircle() {
         animationView.backgroundColor = centerColor
         controlWidth = frame.size.width
@@ -170,7 +170,7 @@ extension CameraButton {
         animationView.layer.cornerRadius = circleWidth / 2
     }
     
-    /// Sets up the inner square for the video recording state
+    /// Sets up the animation view to a square for the video recording state
     private func setupAnimationViewSquare() {
         let calcXY = (Double(controlWidth) - Double(squareWidth))/2
         let castCalcXYFloat = NSNumber.init(value: calcXY).floatValue
@@ -179,13 +179,13 @@ extension CameraButton {
         animationView.layer.cornerRadius = squareWidth/8
     }
     
-    /// When the control is tapped. The proper animation is done and the 'touchUpInside' action is fired for the button
+    /// touchUpInside event Handler
     /// Use the 'recording' and 'cameraButtonType' to determine what action should be taken by the client
-    @objc internal func controlTouched() {
+    @objc internal func touchUpInside() {
+        print("cameraButton - controlTouched")
         if !currentlyAnimating {
             recording = !recording
             animateControl()
-            sendActions(for: .touchUpInside)
         }
     }
     
@@ -222,6 +222,8 @@ extension CameraButton {
                 case .video:
                     self?.currentlyAnimating = false
                 }
+            } else {
+                self?.currentlyAnimating = false
             }
         }
     }
