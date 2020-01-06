@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AttributedList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FhQ-aY-pbB">
+                                <rect key="frame" x="16" y="316" width="382" height="300"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="RwD-Xa-BHl"/>
+                                </constraints>
+                                <mutableString key="text">grilled chicken sandwich, fries, french fries, tenders, chicken tenders, chicken fingers, chicken sandwich, cheeseburger, burger, stahl-meyer chili cheese footlong dog, stahl-meyer chili cheese footlong hotdog, stahl-meyer chili cheese footlong hot dog, chili cheese footlong dog, chili cheese footlong hotdog, chili cheese footlong hot dog, chili cheese dog, chili cheese hotdog, chili cheese hot dog, stahl-meyer footlong dog, stahl-meyer footlong hotdog, stahl-meyer footlong hot dog, footlong dog, footlong hotdog, footlong hot dog, dog, hotdog, hot dog, popcorn, nachos, pretzel, beer nuts, cheese cup, soda, gatorade, water, bottled water, beer, booze, domestic beer, pop, fountain drink, cola</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search For:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpr-i9-GvS">
+                                <rect key="frame" x="16" y="50.5" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSt-JR-JCi">
+                                <rect key="frame" x="16" y="287" width="36.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Term" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="spP-42-zjd">
+                                <rect key="frame" x="145" y="44" width="253" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szp-EI-Qb4">
+                                <rect key="frame" x="16" y="128" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="3" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="Uct-ko-bo3">
+                                <rect key="frame" x="14" y="82" width="328" height="31"/>
+                                <connections>
+                                    <action selector="resultsSliderValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="6UK-jf-QXY"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWh-Ap-Kfr">
+                                <rect key="frame" x="356" y="86" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="eSM-as-dPC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CQA-Ly-wrF">
+                                <rect key="frame" x="16" y="157" width="382" height="100"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Cql-qj-krx"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="spP-42-zjd" secondAttribute="trailing" constant="16" id="1NV-BG-2eO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CQA-Ly-wrF" secondAttribute="trailing" constant="16" id="3c2-5E-BOI"/>
+                            <constraint firstItem="spP-42-zjd" firstAttribute="centerY" secondItem="bpr-i9-GvS" secondAttribute="centerY" id="4F2-FJ-dsY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="szp-EI-Qb4" secondAttribute="trailing" constant="16" id="5Mc-bo-O3T"/>
+                            <constraint firstItem="WSt-JR-JCi" firstAttribute="leading" secondItem="CQA-Ly-wrF" secondAttribute="leading" id="6bQ-vt-g0h"/>
+                            <constraint firstItem="CQA-Ly-wrF" firstAttribute="top" secondItem="szp-EI-Qb4" secondAttribute="bottom" constant="8" id="9pZ-1W-ffE"/>
+                            <constraint firstItem="WSt-JR-JCi" firstAttribute="top" secondItem="CQA-Ly-wrF" secondAttribute="bottom" constant="30" id="CCq-LV-ktf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WSt-JR-JCi" secondAttribute="trailing" constant="16" id="EFb-s6-ZIU"/>
+                            <constraint firstItem="FhQ-aY-pbB" firstAttribute="trailing" secondItem="CQA-Ly-wrF" secondAttribute="trailing" id="GE2-FD-laI"/>
+                            <constraint firstItem="CWh-Ap-Kfr" firstAttribute="trailing" secondItem="spP-42-zjd" secondAttribute="trailing" id="GzG-bf-WoL"/>
+                            <constraint firstItem="CWh-Ap-Kfr" firstAttribute="leading" secondItem="Uct-ko-bo3" secondAttribute="trailing" constant="16" id="Ird-fU-49b"/>
+                            <constraint firstItem="bpr-i9-GvS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="NUZ-m1-HMA"/>
+                            <constraint firstItem="szp-EI-Qb4" firstAttribute="leading" secondItem="bpr-i9-GvS" secondAttribute="leading" id="UK6-zf-l7T"/>
+                            <constraint firstItem="szp-EI-Qb4" firstAttribute="top" secondItem="Uct-ko-bo3" secondAttribute="bottom" constant="16" id="VP5-Ip-u9H"/>
+                            <constraint firstItem="spP-42-zjd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="X2t-WI-KqQ"/>
+                            <constraint firstItem="FhQ-aY-pbB" firstAttribute="top" secondItem="WSt-JR-JCi" secondAttribute="bottom" constant="8" id="aeX-xy-qZ9"/>
+                            <constraint firstItem="Uct-ko-bo3" firstAttribute="top" secondItem="spP-42-zjd" secondAttribute="bottom" constant="4" id="kIG-G9-NxF"/>
+                            <constraint firstItem="spP-42-zjd" firstAttribute="leading" secondItem="bpr-i9-GvS" secondAttribute="trailing" constant="41" id="lMR-tg-Fx5"/>
+                            <constraint firstItem="CQA-Ly-wrF" firstAttribute="leading" secondItem="szp-EI-Qb4" secondAttribute="leading" id="lSO-Mj-xZr"/>
+                            <constraint firstItem="Uct-ko-bo3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ngM-1D-D2E"/>
+                            <constraint firstItem="CWh-Ap-Kfr" firstAttribute="top" secondItem="spP-42-zjd" secondAttribute="bottom" constant="8" id="p5T-fl-Sq9"/>
+                            <constraint firstItem="FhQ-aY-pbB" firstAttribute="leading" secondItem="WSt-JR-JCi" secondAttribute="leading" id="yc4-Td-g2A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="resultsSlider" destination="Uct-ko-bo3" id="X3F-bU-iDd"/>
+                        <outlet property="resultsTextView" destination="CQA-Ly-wrF" id="Gru-wM-jKC"/>
+                        <outlet property="searchTermsTextView" destination="FhQ-aY-pbB" id="P4X-rs-m8E"/>
+                        <outlet property="sliderLabel" destination="CWh-Ap-Kfr" id="nBg-Mb-F6N"/>
+                        <outlet property="termTextField" destination="spP-42-zjd" id="OCg-XZ-mW0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="FuP-b8-y3A">
+                    <connections>
+                        <action selector="viewSingleTapGestureRecognizer:" destination="BYZ-38-t0r" id="8c1-MB-JlJ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>

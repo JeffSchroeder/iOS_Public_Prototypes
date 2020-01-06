@@ -6,4 +6,8 @@ These should have stripped bundle IDs on the targer so you will need to fix that
 
 Projects:
 
+AttributedList - Search a list of terms and return the result list with the search term highlighted.
+
 CameraButton - Project extends the UIButton to mimic the camera and video shutter control on the iOS Camera app.
+
+LongPress - Allow long press to work on timer versus waiting for the finger up to happen.
