@@ -3,7 +3,6 @@
 //  AttributedList
 //
 //  Created by Jeff Schroeder on 1/6/20.
-//  Copyright © 2020 Jeffrey Schroeder. All rights reserved.
 //
 
 import UIKit

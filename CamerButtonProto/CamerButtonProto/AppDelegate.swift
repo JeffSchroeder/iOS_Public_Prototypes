@@ -3,7 +3,6 @@
 //  CamerButtonProto
 //
 //  Created by Jeff Schroeder on 8/30/19.
-//  Copyright © 2019 JeffSchroeder. All rights reserved.
 //
 
 import UIKit

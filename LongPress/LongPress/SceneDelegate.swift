@@ -3,7 +3,6 @@
 //  LongPress
 //
 //  Created by Jeff Schroeder on 12/16/19.
-//  Copyright © 2019 Jeffrey Schroeder. All rights reserved.
 //
 
 import UIKit
