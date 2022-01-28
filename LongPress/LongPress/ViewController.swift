@@ -30,9 +30,9 @@ class ViewController: UIViewController {
     }
     
     @objc func processLongPress(gesture: UITapGestureRecognizer) {
-         print("\(whatsHappening.startIndex)")
+        print("\(whatsHappening.startIndex)")
         switch gesture.state {
-           
+            
         case .possible:
             //whatsHappening.append("possible")
             whatsHappening.insert("possible", at: whatsHappening.startIndex + 1)
@@ -94,7 +94,4 @@ extension ViewController: UITableViewDataSource {
         cell.textLabel?.text = whatsHappening[indexPath.row]
         return cell
     }
-    
-    
 }
-
