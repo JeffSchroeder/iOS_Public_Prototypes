@@ -28,6 +28,9 @@ public class SwiftReferenceClass: NSObject {
         print("** Running classMethodSwift()")
         classMethodSwift()
         internalClassPrintTrailer()
+        
+        let initObjcValidation = ObjcReferenceClass("Hello")
+        initObjcValidation.publicInstancePrintSomething()
     }
     
     // NOTE: This definition is seen as internal
@@ -51,6 +54,11 @@ public class SwiftReferenceClass: NSObject {
         instanceMethodSwift()
         printInstanceVariables()
         internalPrintTrailer()
+    }
+    
+    @objc
+    public func instancePrintSomething() {
+        print("-- SwiftReferencClass.printSomething()")
     }
     
     // NOTE: This definition is seen as internal

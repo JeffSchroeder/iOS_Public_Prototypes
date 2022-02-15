@@ -16,11 +16,14 @@
 @property (nonnull, nonatomic, strong, readonly) NSString *stringInit;
 @property (nullable, nonatomic, strong, readonly) NSString *optionalStringInit;
 
-- (nonnull instancetype)init:(nonnull NSString *)input ;
+- (nonnull instancetype)init:(nonnull NSString *)input;
 - (nonnull instancetype)init:(nonnull NSString *)input optional:(nonnull NSString *)optional;
 
 + (void)publicClassMethodObjc;
 
 - (void)publicInstanceMethodObjc;
 
+- (void)publicInstancePrintSomething;
+
 @end
+
