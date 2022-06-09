@@ -28,7 +28,7 @@
         _stringInit = input;
         _optionalStringInit = optional;
         _stringPublic = @"ThisIsPublicString";
-        SwiftReferenceClass *initSwiftValidation = [[SwiftReferenceClass alloc] init:@"1" :@"2"];
+	        SwiftReferenceClass *initSwiftValidation = [[SwiftReferenceClass alloc] init:@"1" :@"2"];
         [initSwiftValidation instancePrintSomething];
     }
     
